@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Teste de Faltas</title>
+    <style>
+        body{
+            color: rgb(255, 255, 255) ;
+            background: black;
+            position: center ;
+            font: arial 500pt ;
+            text-align: center;
+        }
+        h1 {
+            font: 30pt arial;
+            color:rgb(235, 235, 235)
+        }
+        p {
+           font: italic 21pt arial;   
+        }
+        input {
+            size: 25px  ;
+            color:black;
+            width: 100px ;
+            float:center ;
+                margin:0px auto ;
+        }
+        h2{
+            font: italic 10pt arial ;
+            
+        }
+    </style>
+
+</head>
+<body>
+    <h1><strong>Porcentagem de Faltas!</strong></h1>
+    <h3 id='formula'><br><br><br><br>NumerodeHoras &#215; 100<br>&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;<br>NumeroTotaldeHoras</h3 id='formula'>
+    <p><br><br><br><br>Numero Total de Horas/Aulas :  <input type="number" id='porcentagem'></p>
+    <p>Total de Horas/Falta :   <input type="number" id ='horas'></p>
+    <input type="button" value='somar' onclick="somar()">
+    <p id='result'>Resultado?</p>
+    <h2 id='autoria'><br><br><br><br><br><br><br><br><br><br><br><br><br><br>Willian Renan - testando HTML - 10/12/2019</h2>
+    <script>
+        function somar() {
+            var corletra = document.getElementById(result)
+            var tot = document.getElementById('porcentagem');
+            var hors = document.getElementById('horas');
+            var result = document.getElementById('result');
+            var formu = document.getElementById('formula')
+            var totfinal = Number(tot.value);
+            var horsfinal = Number(hors.value);
+            var final = horsfinal * 100 / totfinal
+            var formu = formula.innerHTML = '<br><br><br><br>' + horsfinal + '&#215; 100 <br>&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;<br>' + totfinal
+            if (final > 25) {
+                result.innerHTML = 'Voce tem ' +  final  + '% de faltas e esta reprovado! &#10008'
+                result.style.color= 'red'
+            }
+            else {
+                result.innerHTML = '&#10004; Voce tem '+ final + '% de falta! '
+                result.style.color= 'green'
+            }
+        }
+    </script>
+</body>
+</html>
